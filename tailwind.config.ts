@@ -14,17 +14,17 @@ const config: Config = {
         container: '1300px',
       },
       colors: {
-        main: '#A3E636',
+        main: '#e6e036',
         mainAccent: '#88cc19', // not needed for shadcn components
         overlay: 'rgba(0,0,0,0.8)', // background color overlay for alert dialogs, modals, etc.
   
         // light mode
-        bg: '#E0E7F1',
+        bg: '#d6944d',
         text: '#000',
         border: '#000',
   
         // dark mode
-        darkBg: '#2c312b',
+        darkBg: '#784106',
         darkText: '#eeefe9',
         darkBorder: '#000',
         secondaryBlack: '#212121', // opposite of plain white, not used pitch black because borders and box-shadows are that color 

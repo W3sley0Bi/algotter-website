@@ -8,12 +8,17 @@ export default function PricingPlan({
   planName,
   description,
   price,
+  free= false,
+  business = false,
 }: {
   perks: string[]
   mostPopular?: boolean
   planName: string
   description: string
-  price: string
+  price?: string
+  free?: boolean
+  business?: boolean
+  
 }) {
   return (
     <div className="border-border dark:border-darkBorder dark:bg-secondaryBlack flex flex-col justify-between rounded-base border-2 bg-white p-5">
@@ -25,12 +30,29 @@ export default function PricingPlan({
               Most popular
             </span>
           )}
+          {business && (
+            <span className="border-border text-text dark:border-darkBorder rounded-base border-2 bg-main px-2 py-0.5 text-sm">
+              Business
+            </span>
+          )}
         </div>
         <p className="mb-3 mt-1">{description}</p>
-        <div>
-          <span className="text-3xl font-heading">${price}</span>{' '}
-          <span>/month</span>{' '}
-        </div>
+        {!business ? ( free ? (
+          <div>
+            <span className="text-3xl font-heading">Free</span>{' '}
+        </div>) :
+          <div>
+            <span className="text-3xl font-heading">${price}</span>{' '}
+            <span>/month</span>{' '}
+          </div>
+        ) : (
+          <div>
+            <span className="text-3xl font-heading">Everything in Basic plus</span>{' '}
+            {/* <span>/month</span>{' '} */}
+          </div>
+        )}
+        
+        
         <ul className="mt-8 flex flex-col gap-2">
           {perks.map((perk) => {
             return (
@@ -45,7 +67,7 @@ export default function PricingPlan({
         size={mostPopular ? 'lg' : 'default'}
         className={cn('mt-12 w-full', mostPopular && 'bg-black text-white')}
       >
-        Buy Plan
+       {business ? 'Contact us' : 'Start Now'}
       </Button>
     </div>
   )

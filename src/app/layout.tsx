@@ -7,7 +7,7 @@ import { ThemeProvider } from '@/components/theme-provider'
 const dmSans = DM_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Notion - an Algotter product',
+  title: 'Notiord - an Algotter product',
 }
 
 export default function RootLayout({
